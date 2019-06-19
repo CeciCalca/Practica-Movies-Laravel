@@ -15,7 +15,7 @@ class ActorController extends Controller
     {
       $actors= \App\Actors::get();
 
-      return view('actors', [
+      return view('actors/actors', [
         'actores'=> $actors
       ]);
     }
@@ -50,7 +50,7 @@ class ActorController extends Controller
     public function show($id)
     {
         $actor= \App\Actors::with('pelis')->find($id);
-        return view('actor',[
+        return view('actors/actor',[
           'Actor'=> $actor
         ]);
     }
@@ -58,7 +58,7 @@ class ActorController extends Controller
     public function search(Request $request)
     {
         $actor= \App\Actors::where('first_name', 'like', '%'.$request->get('q').'%')->get();
-        return view('actor',[
+        return view('actors/actor',[
           'actores'=> $actor
         ]);
     }
