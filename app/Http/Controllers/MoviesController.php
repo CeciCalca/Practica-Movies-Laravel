@@ -21,6 +21,14 @@ class MoviesController extends Controller
         ]);
     }
 
+public function home(){
+
+  $movies=\App\Movies::with('genre')->get();
+  return  view('movies/home', [
+    'movies'=>$movies
+  ]);
+
+}
     /**
      * Show the form for creating a new resource.
      *

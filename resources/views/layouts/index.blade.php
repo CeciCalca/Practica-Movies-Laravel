@@ -1,4 +1,9 @@
-@include('header.blade')
-@include('menu.blade')
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+@include('partials.header')
+<body>
+@include('partials.menu')
 @yield('content')
-@include('footer.blade')
+@include('partials.footer')
+</body>
+</html>

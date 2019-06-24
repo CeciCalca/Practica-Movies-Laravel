@@ -13,7 +13,7 @@ class ActorController extends Controller
      */
     public function index()
     {
-      $actors= \App\Actors::get();
+      $actors= \App\Actors::paginate(10);
 
       return view('actors/actors', [
         'actores'=> $actors

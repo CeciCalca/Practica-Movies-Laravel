@@ -14,7 +14,10 @@ class GenresController extends Controller
      */
     public function index()
     {
-        //
+        $genres=\App\Genres::with('movies')->get();
+        // dd($genres->toArray());
+        return view('movies/home',[
+        'genre'=>$genres]);
     }
 
     /**
